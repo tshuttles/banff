@@ -1,8 +1,12 @@
-require "banff/version"
+require 'pry' 
 
-module Banff
-  class Error < StandardError; end
-  # Your code goes here...
-end
 
-set up files 
+class BanffAttractions
+  
+  attr_accessor :name, :type, :price 
+  
+  def initialize(name)
+    @name = name 
+  end 
+  
+end 
