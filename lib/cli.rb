@@ -1,6 +1,7 @@
 require_relative "../lib/scraper.rb"
 require_relative "../lib/banff.rb"
 require 'nokogiri'
+require 'pry'
 
 class CLI::Banff 
   

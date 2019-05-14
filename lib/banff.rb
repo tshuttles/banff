@@ -4,8 +4,10 @@ class BanffAttractions
   
   attr_accessor :name, :type, :price 
   
-  def initialize(name)
-    @name = name 
+  @@all = []
+  
+  def initialize
   end 
+  
   
 end 
