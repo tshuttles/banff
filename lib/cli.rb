@@ -1,3 +1,7 @@
+require_relative "../lib/scraper.rb"
+require_relative "../lib/banff.rb"
+require 'nokogiri'
+
 class CLI::Banff 
   
   def call 
