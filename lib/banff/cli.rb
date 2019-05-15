@@ -9,6 +9,7 @@ class CLI
   def list_attractions
     puts "Hello! Here are Banff's greatest attractions." 
     # lists the attractions with scraper 
+    @attractions = Attraction.all 
   end 
   
   def menu 
@@ -24,7 +25,7 @@ class CLI
       when "exit" 
         goodbye 
       else 
-        puts "Invalid entry. Type a number for an attraction, list_attractions, or exit."
+        puts "Invalid entry. Type a number for information on an attraction, list_attractions, or exit."
       end 
     end 
   end 
