@@ -15,6 +15,7 @@ class CLI
     input = nil 
     while input != "exit"
       puts "Enter the number of the attraction you are most interested in, or type in list_attractions to see the options again, or type exit."
+      input = gets.strip.downcase 
       case input 
       when "#{number}"
         puts "More info on #{attraction}"
@@ -22,6 +23,8 @@ class CLI
         list_attractions
       when "exit" 
         goodbye 
+      else 
+        puts "Invalid entry. Type a number for an attraction, list_attractions, or exit."
       end 
     end 
   end 
