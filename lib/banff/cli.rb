@@ -16,6 +16,7 @@ class CLI
     while input != "exit"
       puts "Enter the number of the attraction you are most interested in."
     # lists the input code 
+    end 
   end 
   
   def goodbye

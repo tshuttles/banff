@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/banff"
+require_relative '../lib/banff'
+
+CLI.new.call 
