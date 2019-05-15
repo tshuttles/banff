@@ -1,9 +1,3 @@
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
-
-require_relative './banff.rb'
-
 class Scraper 
   
   def self.scrape_attractions(url)

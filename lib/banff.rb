@@ -1,13 +1,7 @@
-require 'pry' 
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-class BanffAttractions
-  
-  attr_accessor :name, :type, :price 
-  
-  @@all = []
-  
-  def initialize
-  end 
-  
-  
-end 
+require_relative './banff/cli'
+require_relative './banff/scraper'
+require_relative './banff/verson' 
