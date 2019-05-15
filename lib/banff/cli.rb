@@ -14,8 +14,15 @@ class CLI
   def menu 
     input = nil 
     while input != "exit"
-      puts "Enter the number of the attraction you are most interested in, or type exit to exit."
-    # lists the input code 
+      puts "Enter the number of the attraction you are most interested in, or type in list_attractions to see the options again, or type exit."
+      case input 
+      when "#{number}"
+        puts "More info on #{attraction}"
+      when "list_attractions"
+        list_attractions
+      when "exit" 
+        goodbye 
+      end 
     end 
   end 
   
