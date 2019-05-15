@@ -2,4 +2,4 @@
 
 require_relative '../lib/banff'
 
-CLI.new.call 
+CLI.new.call
