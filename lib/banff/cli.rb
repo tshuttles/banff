@@ -10,6 +10,9 @@ class CLI
     # lists the attractions with scraper 
     puts "Hello! Here are Banff's greatest attractions." 
     @attractions = Attraction.all 
+    @attractions.each.with_index do |attraction, x|
+      puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}"
+    end 
   end 
   
   def menu 
@@ -19,7 +22,8 @@ class CLI
       input = gets.strip.downcase 
       
       if input.to_i > 0 
-        puts @attractions[input.to_i-1]
+        the_attraction = @attractions[input.to_i-1]
+        puts "#{attraction.name} - #{attraction.type} - #{attraction.price}"
       elsif input == "list" 
         list 
       else 
