@@ -4,5 +4,5 @@ require 'pry'
 
 require_relative './banff/cli'
 require_relative './banff/scraper'
-require_relative './banff/verson' 
+require_relative './banff/version' 
 require_relative './banff/attraction'
