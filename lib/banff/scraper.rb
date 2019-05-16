@@ -1,6 +1,20 @@
 class Scraper 
   
-  def self.scrape_attractions
+  def self.scrape
+    attraction = [] 
+    attraction << self.scrape_attraction
+   
+    attraction 
+    
+    
+    # attraction = Attraction.new 
+    # attraction.name = 
+    # attraction.type = 
+    # attraction.price = 
+    # attraction.url = "https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"
+    # [attraction]
+    
+    
     # doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
     # attractions = [] 
     
@@ -13,5 +27,9 @@ class Scraper
     #     attractions << attractions_hash 
     # end 
     # attractions
+  end 
+  
+  def self.scrape_attraction
+    doc = 
   end 
 end 
