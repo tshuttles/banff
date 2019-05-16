@@ -15,7 +15,7 @@ class Scraper
     # [attraction]
     
     
-    # doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
+    doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
     # attractions = [] 
     
     # doc.css("").each do |attractions| 
@@ -30,6 +30,9 @@ class Scraper
   end 
   
   def self.scrape_attraction
-    doc = 
+    doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
+    name = 
+    type = 
+    price = 
   end 
 end 
