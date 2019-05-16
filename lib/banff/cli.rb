@@ -1,31 +1,29 @@
 class CLI
   
   def call 
-    list_attractions 
+    list
     menu 
     goodbye
   end 
   
-  def list_attractions
-    puts "Hello! Here are Banff's greatest attractions." 
+  def list
     # lists the attractions with scraper 
+    puts "Hello! Here are Banff's greatest attractions." 
     @attractions = Attraction.all 
   end 
   
   def menu 
     input = nil 
     while input != "exit"
-      puts "Enter the number of the attraction you are most interested in, or type in list_attractions to see the options again, or type exit."
+      puts "Enter the number of the attraction you are most interested in, or type in list to see the options again, or type exit."
       input = gets.strip.downcase 
-      case input 
-      when "#{number}"
-        puts "More info on #{attraction}"
-      when "list_attractions"
-        list_attractions
-      when "exit" 
-        goodbye 
+      
+      if input.to_i > 0 
+        puts @attractions[input.to_i-1]
+      elsif input == "list" 
+        list 
       else 
-        puts "Invalid entry. Type a number for information on an attraction, list_attractions, or exit."
+        puts "Invalid entry. Please type a number for information on an attraction, 'list', or 'exit'."
       end 
     end 
   end 
