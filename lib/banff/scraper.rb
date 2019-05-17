@@ -3,7 +3,6 @@ class Scraper
   def self.scrape
     attraction = [] 
     attraction << self.scrape_attraction
-   
     attraction 
     
     
@@ -15,7 +14,7 @@ class Scraper
     # [attraction]
     
     
-    doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
+    # doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
     # attractions = [] 
     
     # doc.css("").each do |attractions| 
@@ -31,8 +30,11 @@ class Scraper
   
   def self.scrape_attraction
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
+    attraction = self.new 
     name = 
     type = 
     price = 
+    
+    attraction 
   end 
 end 
