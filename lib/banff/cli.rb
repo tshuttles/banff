@@ -1,7 +1,8 @@
 class CLI
   
   def call 
-    list
+    # list
+    binding.pry
     menu 
     goodbye
   end 

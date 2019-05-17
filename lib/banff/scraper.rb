@@ -31,6 +31,7 @@ class Scraper
   def self.scrape_attraction
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
     attraction = self.new 
+    binding.pry 
     name = 
     type = 
     price = 
