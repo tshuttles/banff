@@ -32,9 +32,10 @@ class Scraper
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
     attraction = self.new 
     binding.pry 
-    name = 
-    type = 
-    price = 
+    attraction.name = doc.css("#FILTERED_LIST li")[0].css("a")[2].text
+    attraction.type = doc.css("#FILTERED_LIST li")[0].css("span")[9].text
+    attraction.price = doc.css("#FILTERED_LIST li")[0].css("span")[13].text
+    attraction.url = 
     
     attraction 
   end 

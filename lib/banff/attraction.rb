@@ -8,7 +8,7 @@ class Attraction
   end 
   
   def self.all
-    self.scrape_attraction
+    @@attractions
   end 
   
   
