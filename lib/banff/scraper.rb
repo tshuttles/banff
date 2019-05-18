@@ -35,7 +35,7 @@ class Scraper
     attraction.name = doc.css("#FILTERED_LIST li")[0].css("a")[2].text
     attraction.type = doc.css("#FILTERED_LIST li")[0].css("span")[9].text
     attraction.price = doc.css("#FILTERED_LIST li")[0].css("span")[13].text
-    attraction.url = 
+    attraction.url = doc.css("#FILTERED_LIST li")[0].css("a")[2].attr("href")
     
     attraction 
   end 
