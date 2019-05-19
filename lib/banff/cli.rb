@@ -33,6 +33,20 @@ class CLI
     end
   end
   
+  def print_attraction(attraction)
+    puts ""
+    puts "------------------ #{attraction.name} ------------------"
+    puts ""
+    puts "Type:             #{attraction.type}"
+    puts "Price:            #{attraction.price}"
+    puts "Description:      #{attraction.description}"
+    puts "Open Hours:       #{attraction.open_hours}"
+    puts "Duration:         #{attraction.duration}"
+    puts "Website:          #{attraction.url}"
+    puts ""
+  end
+
+  
   # def list
   #   # lists the attractions with scraper 
   #   puts ""
