@@ -4,13 +4,13 @@ class Scraper
     Nokogiri::HTML(open("https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html"))
   end 
   
-  def scrape_attraction_index 
+  def scrape_attraction_list
     self.get_page.css("#FILTERED_LIST li")
   end 
   
   def make_attractions
-    scrape_attraction_index.each do |doc|
-      Attraction.new_from_index_page(doc)
+    scrape_attraction_list.each do |doc|
+      Attraction.new_from_list_page(doc)
     end
   end
   

@@ -4,7 +4,7 @@ class Attraction
   
   @@all = []
   
-  def self.new_from_index_page(doc)
+  def self.new_from_list_page(doc)
     self.new(
       doc.css("#FILTERED_LIST li")[0].css("a")[2].text,
       doc.css("#FILTERED_LIST li")[0].css("span")[9].text,
@@ -25,5 +25,24 @@ class Attraction
     @@all 
   end 
   
+  def self.find(id)
+    self.all[id-1]
+  end
+  
+  def doc
+    @doc ||= Nokogiri::HTML(open(self.url))
+  end
+  
+  def description 
+    @description ||= doc.css("#taplc_location_detail_about_card_0")[0].css("span")[0].text 
+  end 
+  
+  def open_hours 
+    @open_hours ||= doc.css("#taplc_location_detail_about_card_0")[0].css("div")[6].text 
+  end 
+  
+  def duration 
+    @duration ||= doc.css("#taplc_location_detail_about_card_0")[0].css("div")[9].text
+  end 
   
 end 
