@@ -1,8 +1,4 @@
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
+module Banff
+end
 
-require_relative './banff/cli'
-require_relative './banff/scraper'
-require_relative './banff/version' 
-require_relative './banff/attraction'
+require_relative '../config/environment'

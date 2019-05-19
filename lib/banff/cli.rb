@@ -1,7 +1,7 @@
 class CLI
   
   def call 
-    # binding.pry
+    binding.pry
     Scraper.new.make_attractions 
     start 
     
