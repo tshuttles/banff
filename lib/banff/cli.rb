@@ -2,7 +2,7 @@ class Banff::CLI
   
   def call 
     # binding.pry
-    Scraper.new.make_attractions 
+    Banff::Scraper.new.make_attractions 
     start 
     
     # list
@@ -21,7 +21,7 @@ class Banff::CLI
     puts "Which attraction would you like more information on?"
     input = gets.strip
     
-        restaurant = Banff::Attraction.find(input.to_i)
+    attraction = Banff::Attraction.find(input.to_i)
 
     print_attraction_info(attraction)
 
@@ -47,7 +47,7 @@ class Banff::CLI
   
   def print_attractions(from_number)
     puts ""
-    puts "---------- Attractions #{from_number} - #{from_number+14} ----------"
+    puts "------ Attractions #{from_number} - #{from_number+14} ------"
     puts ""
     Banff::Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
       puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}"

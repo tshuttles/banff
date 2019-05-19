@@ -1,4 +1,4 @@
-class Attraction 
+class Banff::Attraction 
   
   attr_accessor :name, :type, :price, :url, :description, :open_hours, :duration
   
