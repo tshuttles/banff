@@ -1,4 +1,4 @@
-class Banff::Attraction 
+class Attraction 
   
   attr_accessor :name, :type, :price, :url, :description, :open_hours, :duration
   
@@ -10,7 +10,7 @@ class Banff::Attraction
       doc.css("#FILTERED_LIST li")[0].css("span")[9].text,
       doc.css("#FILTERED_LIST li")[0].css("span")[13].text,
       doc.css("#FILTERED_LIST li")[0].css("a")[2].attr("href")
-      )
+    )
   end
   
   def initialize(name=nil, type=nil, price=nil, url=nil)

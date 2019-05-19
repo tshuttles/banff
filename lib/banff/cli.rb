@@ -1,8 +1,8 @@
-class Banff::CLI
+class CLI
   
   def call 
     # binding.pry
-    Banff::Scraper.new.make_attractions 
+    Scraper.new.make_attractions 
     start 
     
     # list
@@ -21,7 +21,7 @@ class Banff::CLI
     puts "Which attraction would you like more information on?"
     input = gets.strip
     
-    attraction = Banff::Attraction.find(input.to_i)
+    attraction = Attraction.find(input.to_i)
 
     print_attraction_info(attraction)
 
@@ -41,15 +41,12 @@ class Banff::CLI
       start
     end
   end
-
-    
-  end 
   
   def print_attractions(from_number)
     puts ""
     puts "------ Attractions #{from_number} - #{from_number+14} ------"
     puts ""
-    Banff::Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
+    Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
       puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}"
     end
   end
@@ -66,7 +63,7 @@ class Banff::CLI
     puts "Website:          #{attraction.url}"
     puts ""
   end
-
+end
   
   # def list
   #   # lists the attractions with scraper 
@@ -103,5 +100,4 @@ class Banff::CLI
   #   puts "Thank you! We hope to see you return soon for more information on Banff's world-class attractions!"
   #   exit 
   # end 
-  
-end 
+# end 
