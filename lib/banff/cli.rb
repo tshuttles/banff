@@ -1,4 +1,4 @@
-class CLI
+class Banff::CLI
   
   def call 
     # binding.pry
@@ -21,6 +21,27 @@ class CLI
     puts "Which attraction would you like more information on?"
     input = gets.strip
     
+        restaurant = Banff::Attraction.find(input.to_i)
+
+    print_attraction_info(attraction)
+
+    puts ""
+    puts "Would you like to see another attraction? Enter y or n"
+
+    input = gets.strip.downcase
+    if input == "y"
+      start
+    elsif input == "n"
+      puts ""
+      puts "Thank you! We hope you have a wonderful time in Banff!"
+      exit
+    else
+      puts ""
+      puts "Invalid input. Let us restart."
+      start
+    end
+  end
+
     
   end 
   
@@ -28,12 +49,12 @@ class CLI
     puts ""
     puts "---------- Attractions #{from_number} - #{from_number+14} ----------"
     puts ""
-    WorldsBestRestaurants::Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
+    Banff::Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
       puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}"
     end
   end
   
-  def print_attraction(attraction)
+  def print_attraction_info(attraction)
     puts ""
     puts "------------------ #{attraction.name} ------------------"
     puts ""
