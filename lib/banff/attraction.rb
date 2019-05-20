@@ -1,13 +1,14 @@
 class Banff::Attraction 
   
-  attr_accessor :name, :type, :url, :description, :open_hours, :duration
+  attr_accessor :name, :type, :url, :index, :description, :open_hours, :duration
   
   @@all = []
   
-  def initialize(name=nil, type=nil, url=nil)
+  def initialize(name=nil, type=nil, url=nil, index=nil)
     @name = name
     @type = type 
     @url = url
+    @index = index 
     @@all << self
   end 
   
@@ -21,7 +22,7 @@ class Banff::Attraction
   
   def self.print_attractions
     self.all.each do |doc|
-      puts "#{doc.x}. #{doc.name}"
+      puts "#{doc.index}. #{doc.name}"
     end 
   end 
   
@@ -35,7 +36,6 @@ class Banff::Attraction
     puts "Website:      #{attraction.url}"
     puts ""
   end
-end
 end 
   
   
