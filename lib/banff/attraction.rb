@@ -4,9 +4,8 @@ class Banff::Attraction
   
   @@all = []
   
-  def initialize(name=nil, type=nil, url=nil, index=nil)
+  def initialize(name, url, index)
     @name = name
-    @type = type 
     @url = url
     @index = index 
     @@all << self
@@ -22,7 +21,7 @@ class Banff::Attraction
   
   def self.print_attractions
     self.all.each do |doc|
-      puts "#{doc.name}"
+      puts "#{doc.index}. #{doc.name}"
     end 
   end 
   
