@@ -1,22 +1,25 @@
-class Attraction 
+class Banff::Attraction 
   
-  attr_accessor :name, :type, :price, :url, :description, :open_hours, :duration
+  attr_accessor :name, :type, :url, :description, :open_hours, :duration
   
   @@all = []
   
   def self.new_from_list_page(doc)
     self.new(
-      doc.css("#FILTERED_LIST li")[0].css("a")[2].text,
-      doc.css("#FILTERED_LIST li")[0].css("span")[9].text,
-      doc.css("#FILTERED_LIST li")[0].css("span")[13].text,
-      doc.css("#FILTERED_LIST li")[0].css("a")[2].attr("href")
+      doc.css("a")[2].text,
+      doc.css("span")[9].text, 
+      doc.css("a")[2].attr("href")
+      
+      # doc.css("#FILTERED_LIST li")[0].css("a")[2].text,
+      # doc.css("#FILTERED_LIST li")[0].css("span")[9].text,
+      # doc.css("#FILTERED_LIST li")[0].css("span")[13].text, ***Had to remove price
+      # doc.css("#FILTERED_LIST li")[0].css("a")[2].attr("href")
     )
   end
   
-  def initialize(name=nil, type=nil, price=nil, url=nil)
+  def initialize(name=nil, type=nil, url=nil)
     @name = name
     @type = type 
-    @price = price 
     @url = url
     @@all << self
   end 

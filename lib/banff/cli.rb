@@ -1,8 +1,8 @@
-class CLI
+class Banff::CLI
   
   def call 
-    binding.pry
-    Scraper.new.make_attractions 
+    # binding.pry
+    Banff::Scraper.new.make_attractions 
     start 
     
     # list
@@ -13,15 +13,18 @@ class CLI
   def start 
     puts ""
     puts "Hello! Here are Banff's greatest attractions." 
+    print_attractions
+    puts "" 
+    puts "Enter the number of the attraction you are interested in."
     input = gets.strip.to_i
     
-    print_attractions(input)
+    # print_attractions(input)
     
-    puts ""
-    puts "Which attraction would you like more information on?"
-    input = gets.strip
+    # puts ""
+    # puts "Which attraction would you like more information on?"
+    # input = gets.strip
     
-    attraction = Attraction.find(input.to_i)
+    attraction = Banff::Attraction.find(input.to_i)
 
     print_attraction_info(attraction)
 
@@ -42,12 +45,13 @@ class CLI
     end
   end
   
-  def print_attractions(from_number)
+  def print_attractions
     puts ""
-    puts "------ Attractions #{from_number} - #{from_number+14} ------"
-    puts ""
-    Attraction.all[from_number-1, 15].each.with_index(from_number) do |attraction, x|
-      puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}"
+    # puts "------ Attractions #{from_number} - #{from_number+14} ------"
+    # puts ""
+    Banff::Attraction.all.each.with_index do |attraction, x|
+      # puts "#{x}. #{attraction.name} - #{attraction.type} - #{attraction.price}" *** Had to remove price 
+      puts "#{x}. #{attraction.name} - #{attraction.type}"
     end
   end
   
@@ -56,7 +60,7 @@ class CLI
     puts "------------------ #{attraction.name} ------------------"
     puts ""
     puts "Type:             #{attraction.type}"
-    puts "Price:            #{attraction.price}"
+    # puts "Price:            #{attraction.price}"
     puts "Description:      #{attraction.description}"
     puts "Open Hours:       #{attraction.open_hours}"
     puts "Duration:         #{attraction.duration}"
