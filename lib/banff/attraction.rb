@@ -1,6 +1,6 @@
 class Banff::Attraction 
   
-  attr_accessor :name, :type, :url, :index, :description, :open_hours, :duration
+  attr_accessor :name, :url, :index, :description, :open_hours, :duration
   
   @@all = []
   
@@ -27,8 +27,7 @@ class Banff::Attraction
   
   def self.display_attraction(attraction)
     puts ""
-    puts "              #{attraction.name}"
-    puts "Type:         #{attraction.type}"
+    puts "              #{attraction.name.upcase}"
     puts "Description:  #{attraction.description}"
     puts "Open Hours:   #{attraction.open_hours}"
     puts "Duration:     #{attraction.duration}"

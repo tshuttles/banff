@@ -9,9 +9,10 @@ class Banff::CLI
   end 
   
   def welcome 
-    puts "Hello! Here are Banff's greatest attractions." 
+    puts "" 
+    puts "Hello! Here are Banff's greatest attractions!" 
     puts ""
-    puts "Enter the number of the attraction you are interested in."
+    puts "Enter the number of the attraction you are interested in, for more information."
     puts "" 
   end 
   
@@ -26,14 +27,19 @@ class Banff::CLI
           Banff::Attraction.display_attraction(attraction)
           
           puts ""
-          puts "Want to see a different attraction? Type 'list' to view the attractions again."
+          puts "Type 'list' to view the attractions again."
           puts ""
           puts "Otherwise type 'exit', to exit"
+          puts "" 
         elsif input == "list"
-          puts "  Enter the number located next to the attraction you would like details on: "
+          puts ""
+          puts "Enter the number located next to the attraction you would like details on: "
+          puts ""
           Banff::Attraction.print_attractions
         elsif input != "exit"
+          puts "" 
           puts "Invalid entry. Please type a number for information on an attraction, 'list', or 'exit'."
+          puts ""
         end
       end    
   end
