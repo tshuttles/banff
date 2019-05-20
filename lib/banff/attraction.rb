@@ -22,7 +22,7 @@ class Banff::Attraction
   
   def self.print_attractions
     self.all.each do |doc|
-      puts "#{doc.index}. #{doc.name}"
+      puts "#{doc.name}"
     end 
   end 
   

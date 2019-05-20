@@ -12,29 +12,30 @@ class Banff::CLI
     puts "Hello! Here are Banff's greatest attractions." 
     puts ""
     puts "Enter the number of the attraction you are interested in."
+    puts "" 
   end 
   
   def start
     input = ""
       while input != "exit" do
         input = gets.strip.downcase       
-                                           
-      if (1..30).include?(input.to_i)                           
-        
-        attraction = Attraction.find_attraction(input.to_i)
-        Scraper.attraction(attraction)
-        Attraction.display_attraction(attraction)
-        
-        puts "Want to see a different attraction? Type 'list' to view the attractions again."
-        puts ""
-        puts "Otherwise type 'exit', to exit"
-      elsif input == "list"
-        puts "  Enter the number located next to the attraction you would like details on: "
-        Attraction.print_attractions
-      elsif input != "exit"
-        puts "Invalid entry. Please type a number for information on an attraction, 'list', or 'exit'."
-      end
-    end    
+        if (1..30).include?(input.to_i)                           
+          
+          attraction = Banff::Attraction.find_attraction(input.to_i)
+          Banff::Scraper.attraction(attraction)
+          Banff::Attraction.display_attraction(attraction)
+          
+          puts ""
+          puts "Want to see a different attraction? Type 'list' to view the attractions again."
+          puts ""
+          puts "Otherwise type 'exit', to exit"
+        elsif input == "list"
+          puts "  Enter the number located next to the attraction you would like details on: "
+          Banff::Attraction.print_attractions
+        elsif input != "exit"
+          puts "Invalid entry. Please type a number for information on an attraction, 'list', or 'exit'."
+        end
+      end    
   end
 end
   
