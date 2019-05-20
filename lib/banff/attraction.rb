@@ -27,7 +27,8 @@ class Banff::Attraction
   
   def self.display_attraction(attraction)
     puts ""
-    puts "              #{attraction.name.upcase}"
+    puts "Name:         #{attraction.name.upcase}"
+    puts ""
     puts "Description:  #{attraction.description}"
     puts "Open Hours:   #{attraction.open_hours}"
     puts "Duration:     #{attraction.duration}"

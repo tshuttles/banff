@@ -13,22 +13,22 @@ class Banff::Scraper
   def self.attraction(attraction)
     doc = Nokogiri::HTML(open("https://www.tripadvisor.com#{attraction.url}"))
     
-    description = doc.css("#taplc_location_detail_about_card_0")[0].css("span")[0].text
-    open_hours = doc.css("#taplc_location_detail_about_card_0")[0].css("div")[6].text
-    duration = doc.css("#taplc_location_detail_about_card_0")[0].css("div")[9].text 
+    description = doc.css("#taplc_location_detail_about_card_0")[0].css("span")[0]
+    open_hours = doc.css("#taplc_location_detail_about_card_0")[0].css("div")[6]
+    duration = doc.css("#taplc_location_detail_about_card_0")[0].css("div")[9] 
     
     if description
-      attraction.description = description
+      attraction.description = description.text
     else
       attraction.description = "No information"
     end
     if open_hours
-      attraction.open_hours = open_hours
+      attraction.open_hours = open_hours.text
     else
       attraction.open_hours = "No information"
     end
     if duration 
-      attraction.duration = duration
+      attraction.duration = duration.text
     else
       attraction.duration = "No information"
     end
