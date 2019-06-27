@@ -1,28 +1,32 @@
 # Banff
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/banff`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the Banff CLI! This is my first project as a Flatiron school student.
 
-TODO: Delete this and the text above, and describe your gem
+This application pulls information from Trip Advisor's Banff website "https://www.tripadvisor.com/Attractions-g154911-Activities-Banff_Banff_National_Park_Alberta.html", which lists 30 different attractions that Banff, Alberta, Canada has to offer! It's a small town placed smack-dab in the middle of the Canadian Rocky Mountains. It is quietly known as one of the world's highest rated tourist towns! Find out which attractions you're interested in most and then make your dream trip a reality! 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+1) Clone the github repository by entering the following commands into your IDE terminal:
 
-```ruby
-gem 'banff'
-```
+```git clone git@github.com:tshuttles/banff.git```
 
-And then execute:
+2) Change to the cloned Banff directory:
 
-    $ bundle
+```cd banff```
 
-Or install it yourself as:
+3) Install all required gems:
 
-    $ gem install banff
+```gem install pry```
+
+4) Run the CLI:
+
+```bin/banff```
+
+5) Enjoy!
 
 ## Usage
 
-TODO: Write usage instructions here
+After you run ```bin/banff```, read the welcome message and then follow the prompt from there! 
 
 ## Development
 
